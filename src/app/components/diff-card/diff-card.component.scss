@@ -1,0 +1,36 @@
+.diff-card-img {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    >img {
+        height: 40%;
+        width: 40%;
+    }
+}
+
+.input-function-form-field {
+    width: 100%;
+}
+
+.limit-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.limit-form-field {
+    width: 47%;
+}
+
+.diff-card-solve-button {
+    padding-top: 0.6em;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.input-error {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

@@ -1,0 +1,37 @@
+<mat-card>
+    <!-- <div class="diff-card-img">
+        <img src="./../../../assets/laplace_operator.png" alt="Laplace operator">
+    </div> -->
+    <form>
+        <mat-form-field class="input-function-form-field">
+            <input matInput type="text" placeholder="Введіть функцію y(t) (розвязок задачі)" name="function" [formGroup]="diffCardFormGroup" [formControl]="functionControl"
+                [(ngModel)]="function" />
+            <mat-error *ngIf="functionControl.hasError('required')" class="input-error">Обов'язкове поле</mat-error>     
+            <mat-error *ngIf="!functionControl.hasError('required') && functionControl.hasError('pattern')" class="input-error">Функція некоректна</mat-error>                         
+            <button mat-button *ngIf="function" matSuffix mat-icon-button aria-label="Clear" (click)="function=''">
+                <mat-icon>close</mat-icon>
+            </button>
+        </mat-form-field>
+        <div class="limit-container">
+            <mat-form-field class="limit-form-field">
+                <input matInput type="text" placeholder="Від" name="leftLimit" [formGroup]="diffCardFormGroup" [formControl]="leftLimitControl"
+                    [(ngModel)]="leftLimit" />
+                <mat-error *ngIf="leftLimitControl.hasError('required')" class="input-error">Обов'язкове поле</mat-error>
+                <button mat-button *ngIf="leftLimit" matSuffix mat-icon-button aria-label="Clear" (click)="leftLimit=''">
+                    <mat-icon>close</mat-icon>
+                </button>
+            </mat-form-field>
+            <mat-form-field class="limit-form-field">
+                <input matInput type="text" placeholder="До" name="rightLimit" [formGroup]="diffCardFormGroup" [formControl]="rightLimitControl"
+                    [(ngModel)]="rightLimit" />
+                <mat-error *ngIf="rightLimitControl.hasError('required')" class="input-error">Обов'язкове поле</mat-error>
+                <button mat-button *ngIf="rightLimit" matSuffix mat-icon-button aria-label="Clear" (click)="rightLimit=''">
+                    <mat-icon>close</mat-icon>
+                </button>
+            </mat-form-field>
+        </div>
+    </form>
+    <div class="diff-card-solve-button">
+        <button mat-raised-button color="primary" (click)="solve()">Запустити алгоритм</button>
+    </div>
+</mat-card>

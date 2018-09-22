@@ -1,0 +1,24 @@
+.diff-main {
+    display: flex;
+    flex-direction: row;
+}
+
+.left-side-container {
+    margin: 0.1em;
+    padding: 0.1em;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+}
+
+.right-side-container {
+    margin: 0.1em;
+    padding: 0.1em;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+}
+
+.result-table {
+    margin-top: 0.4em;
+}

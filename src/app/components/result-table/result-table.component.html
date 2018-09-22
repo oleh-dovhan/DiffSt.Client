@@ -1,0 +1,34 @@
+<mat-table *ngIf="dataSource && dataSource.length > 0" #table [dataSource]="dataSource" class="mat-elevation-z1">
+    <!-- Position Column -->
+    <ng-container matColumnDef="position">
+        <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
+    </ng-container>
+
+    <!-- Value Column -->
+    <ng-container matColumnDef="value">
+        <mat-header-cell *matHeaderCellDef> t </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.value | number:'1.10-10'}} </mat-cell>
+    </ng-container>
+
+    <!-- Real Column -->
+    <ng-container matColumnDef="real">
+        <mat-header-cell *matHeaderCellDef> Задане значення y(t) </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.realValue | number:'1.10-10'}} </mat-cell>
+    </ng-container>
+
+    <!-- Method Column -->
+    <ng-container matColumnDef="method">
+        <mat-header-cell *matHeaderCellDef> Значення y(t) (метод) </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.methodValue | number:'1.10-10'}} </mat-cell>
+    </ng-container>
+
+    <!-- Difference Column -->
+    <ng-container matColumnDef="difference">
+        <mat-header-cell *matHeaderCellDef> Різниця </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.difference | number:'1.10-10'}} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>

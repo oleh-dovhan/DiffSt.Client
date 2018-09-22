@@ -1,0 +1,9 @@
+<div class="diff-main">
+    <div class="left-side-container">
+        <app-diff-card (solveButtonClicked)="solveButtonClickedHandler($event)"></app-diff-card>
+    </div>
+    <div class="right-side-container">
+        <app-chart [newChartDataFound]="newChartDataFound"></app-chart>
+        <app-result-table [dataSource]="resultTableData" class="result-table"></app-result-table>
+    </div>
+</div>
